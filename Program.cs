@@ -52,3 +52,58 @@ namespace ChetuCalculator
         }
     }
 }
+
+
+/*
+
+        [HttpPost]
+        public IActionResult Create(Employee emp)
+        {
+           // Employee emp = new Employee();
+            string dbPath = string.Empty;
+            string Name = Request.Form["Name"];
+            string Email = Request.Form["Email"];
+            string Mobile = Request.Form["Mobile"];
+            string Address = Request.Form["Address"];
+           
+            var files = Request.Form.Files;
+            if (files.Count> 0)
+            {
+                var file = files[0];
+                string data = Environment.WebRootPath;
+                string fullpath = Path.Combine(data,"images",files[0].FileName);
+                dbPath = "images/" + files[0].FileName;
+                FileStream st = new FileStream(fullpath,FileMode.Create);
+                files[0].CopyTo(st);
+            }
+            Employee emps = new Employee()
+            {
+                Name = Name,
+                Email = Email,
+                Mobile = Mobile,
+                Address = Address
+            };
+            emps.Image = dbPath;
+
+            if (ModelState.IsValid)
+            {
+                dbContext.Employees.Add(emps);
+                dbContext.SaveChanges();
+                return RedirectToAction("index");
+            }
+            else
+            {
+                return View(emp);
+            }
+        }*/
+
+
+
+
+
+
+
+
+
+
+
